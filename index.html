@@ -287,8 +287,8 @@ r.lang=on?'uk':'ru';if(on)r.setAttribute('data-uk','');else r.removeAttribute('d
 var ukOn=false,busy=false,fl=document.getElementById('flag'),sw=document.getElementById('sweep');
 var thm=document.getElementById('thm');fl.onclick=thm.onclick=function(){if(busy)return;busy=true;var b=this.getBoundingClientRect();sw.style.setProperty('--x',(b.left+b.width/2)+'px');sw.style.setProperty('--y',(b.top+b.height/2)+'px');sw.classList.add('go');
 setTimeout(function(){ukOn=!ukOn;lang(ukOn)},550);setTimeout(function(){sw.classList.remove('go');sw.classList.add('out')},700);setTimeout(function(){sw.classList.remove('out');busy=false},1300)};
-var APK='';var dl=document.getElementById('dl');
-if(APK){dl.href=APK;dl.setAttribute('download','')}else{dl.addEventListener('click',function(e){e.preventDefault();document.getElementById('dlnote').style.display='block'})}
+var APK='https://github.com/yuzaka2347/yougram/releases/download/v1.3.0/Yougram-v1.3.2.apk';var dl=document.getElementById('dl');
+if(APK){document.querySelectorAll('a[href="#download"]').forEach(function(a){a.href=APK;a.setAttribute('download','Yougram.apk')})}else{dl.addEventListener('click',function(e){e.preventDefault();document.getElementById('dlnote').style.display='block'})}
 })();
 </script>
 </body>
